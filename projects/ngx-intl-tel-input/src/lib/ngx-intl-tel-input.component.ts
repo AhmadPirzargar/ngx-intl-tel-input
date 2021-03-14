@@ -87,9 +87,10 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 	countrySearchText = '';
 
 	@ViewChild('countryList') countryList: ElementRef;
+	@ViewChild('searchInput') searchInput: ElementRef;
 
-	onTouched = () => {};
-	propagateChange = (_: ChangeData) => {};
+	onTouched = () => { };
+	propagateChange = (_: ChangeData) => { };
 
 	constructor(private countryCodeData: CountryCode) {
 		// If this is not set, ngx-bootstrap will try to use the bs3 CSS (which is not what we've embedded) and will
@@ -384,7 +385,7 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 		let number: lpn.PhoneNumber;
 		try {
 			number = this.phoneUtil.parse(phoneNumber, countryCode.toUpperCase());
-		} catch (e) {}
+		} catch (e) { }
 		return number;
 	}
 
@@ -533,5 +534,11 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 				}
 			}
 		}
+	}
+
+	// fix auto focus failed
+	onShownDropDown() {
+		if (this.searchInput)
+			this.searchInput.nativeElement.focus();
 	}
 }
