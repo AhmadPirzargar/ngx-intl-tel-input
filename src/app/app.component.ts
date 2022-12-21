@@ -2,7 +2,7 @@ import { CountryISO } from 'projects/ngx-intl-tel-input/src/lib/enums/country-is
 import { SearchCountryField } from 'projects/ngx-intl-tel-input/src/lib/enums/search-country-field.enum';
 
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { PhoneNumberFormat } from 'projects/ngx-intl-tel-input/src/public_api';
 
 @Component({
@@ -19,8 +19,8 @@ export class AppComponent {
 		CountryISO.UnitedStates,
 		CountryISO.UnitedKingdom,
 	];
-	phoneForm = new FormGroup({
-		phone: new FormControl(undefined, [Validators.required]),
+	phoneForm = new UntypedFormGroup({
+		phone: new UntypedFormControl(undefined, [Validators.required]),
 	});
 
 	changePreferredCountries() {
