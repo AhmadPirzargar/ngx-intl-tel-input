@@ -6,6 +6,7 @@ An Angular package for entering and validating international telephone numbers. 
 ## `NOTE`: 
 This a forked version of [Origin Implementation](https://www.npmjs.com/package/ngx-intl-tel-input) and below bugs resolved:
   - Focus to input on open countries menu
+  - Update support angular v14
 ## Installation
 
 ### Install Dependencies
